@@ -28,5 +28,5 @@ BuddAI is your personal, AI-powered knowledge companion. It seamlessly integrate
 ## ✨Contributors
 
 <a href="https://github.com/pranay-0512/buddAI/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=OcularEngineering/ocular" />
+  <img src="https://contrib.rocks/image?repo=pranay-0512/buddAI" />
 </a>
