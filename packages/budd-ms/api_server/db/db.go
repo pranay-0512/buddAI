@@ -1,7 +1,7 @@
 package db
 
 import (
-	"api_server/utils"
+	"api_server/config"
 	"context"
 	"log"
 	"time"
@@ -9,9 +9,11 @@ import (
 	"github.com/jackc/pgx/v5"
 )
 
+var DB *pgx.Conn
+
 func InitDB(c context.Context) error {
 	ctx, cancel := context.WithTimeout(c, 2000*time.Millisecond)
-	conn, err := pgx.Connect(ctx, utils.AppConfig.POSTGRES_URL)
+	conn, err := pgx.Connect(ctx, config.AppConfig.POSTGRES_URL)
 	if err != nil {
 		log.Fatal("Unable to connect to database", err)
 		return err

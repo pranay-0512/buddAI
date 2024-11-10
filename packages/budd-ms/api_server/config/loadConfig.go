@@ -1,4 +1,4 @@
-package utils
+package config
 
 import (
 	"log"
@@ -17,6 +17,8 @@ type Config struct {
 	PORT string
 
 	POSTGRES_URL string
+
+	JWT_SECRET string
 }
 
 var AppConfig Config
@@ -32,6 +34,7 @@ func LoadConfig() {
 		GOOGLE_CLIENT_CALLBACK_URL: os.Getenv("GOOGLE_CLIENT_CALLBACK_URL"),
 		PORT:                       os.Getenv("PORT"),
 		POSTGRES_URL:               os.Getenv("POSTGRES_URL"),
+		JWT_SECRET:                 os.Getenv("JWT_SECRET"),
 	}
 	log.Println("Configuration loaded.")
 }

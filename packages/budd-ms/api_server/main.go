@@ -1,9 +1,9 @@
 package main
 
 import (
+	"api_server/config"
 	"api_server/db"
 	"api_server/routes"
-	"api_server/utils"
 	"context"
 	"log"
 
@@ -12,7 +12,7 @@ import (
 
 func main() {
 	ctx := context.Background()
-	utils.LoadConfig()
+	config.LoadConfig()
 	if err := db.InitDB(ctx); err != nil {
 		log.Fatal("error initiating db")
 		return
@@ -23,5 +23,5 @@ func main() {
 	routes.SetupV1Routes(v1Route)
 
 	// run on port
-	r.Run(utils.AppConfig.PORT)
+	r.Run(config.AppConfig.PORT)
 }
