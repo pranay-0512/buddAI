@@ -15,6 +15,8 @@ type Config struct {
 	GEMINI_LLM_KEY string
 
 	PORT string
+
+	POSTGRES_URL string
 }
 
 var AppConfig Config
@@ -29,6 +31,7 @@ func LoadConfig() {
 		GOOGLE_CLIENT_SECRET:       os.Getenv("GOOGLE_CLIENT_SECRET"),
 		GOOGLE_CLIENT_CALLBACK_URL: os.Getenv("GOOGLE_CLIENT_CALLBACK_URL"),
 		PORT:                       os.Getenv("PORT"),
+		POSTGRES_URL:               os.Getenv("POSTGRES_URL"),
 	}
 	log.Println("Configuration loaded.")
 }
